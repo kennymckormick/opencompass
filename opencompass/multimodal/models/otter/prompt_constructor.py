@@ -60,7 +60,7 @@ class OTTERMMBenchPromptConstructor:
         return prompt
 
 
-class OTTERCOCOCaotionPromptConstructor(OTTERMMBenchPromptConstructor):
+class OTTERCOCOCaptionPromptConstructor(OTTERMMBenchPromptConstructor):
     """Prompt constructor for OTTER on COCO Caption."""
 
     def _process(self, data_samples: List[DataSample]) -> str:

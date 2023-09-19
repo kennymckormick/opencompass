@@ -1,11 +1,20 @@
-from typing import TYPE_CHECKING
+from .otter import Otter
+from .post_processor import (OTTERCOCOCaptionPostProcessor,
+                             OTTERMMBenchPostProcessor, OTTERMMEPostProcessor,
+                             OTTERScienceQAPostProcessor,
+                             OTTERVQAPostProcessor, OTTERVSRPostProcessor)
+from .prompt_constructor import (OTTERCOCOCaptionPromptConstructor,
+                                 OTTERMMBenchPromptConstructor,
+                                 OTTERMMEPromptConstructor,
+                                 OTTERScienceQAPromptConstructor,
+                                 OTTERVQAPromptConstructor,
+                                 OTTERVSRPromptConstructor)
 
-from transformers.utils import (OptionalDependencyNotAvailable,
-                                is_torch_available)
-
-if TYPE_CHECKING:
-    try:
-        if not is_torch_available():
-            raise OptionalDependencyNotAvailable()
-    except OptionalDependencyNotAvailable:
-        pass
+__all__ = [
+    'Otter', 'OTTERCOCOCaptionPostProcessor', 'OTTERScienceQAPostProcessor',
+    'OTTERMMBenchPostProcessor', 'OTTERMMEPostProcessor',
+    'OTTERVQAPostProcessor', 'OTTERVSRPostProcessor',
+    'OTTERCOCOCaptionPromptConstructor', 'OTTERScienceQAPromptConstructor',
+    'OTTERMMBenchPromptConstructor', 'OTTERMMEPromptConstructor',
+    'OTTERVQAPromptConstructor', 'OTTERVSRPromptConstructor'
+]
